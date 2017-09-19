@@ -6,4 +6,8 @@ class BookmarkManager < Sinatra::Base
     @links = Link.all
     erb :'links/index'
   end
+
+    get '/links/new' do
+      erb :'links/new'
+    end
 end
