@@ -13,4 +13,3 @@ gem 'dm-postgres-adapter'
 gem 'sinatra'
 gem 'selenium-webdriver'
 gem 'database_cleaner'
-gem "json", "~> 1.8.6"
