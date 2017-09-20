@@ -117,7 +117,6 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
-  json (~> 1.8.6)
   rspec
   selenium-webdriver
   sinatra
