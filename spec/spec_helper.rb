@@ -12,8 +12,10 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 ENV['RACK_ENV'] = 'test'
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '../app', 'app.rb')
 require 'capybara/rspec'
+require './app/models/link'
+require './app/app'
 require 'database_cleaner'
 
 Capybara.app = BookmarkManager

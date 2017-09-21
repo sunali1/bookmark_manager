@@ -8,10 +8,10 @@ feature 'Creating links' do
     visit '/links/new'
     fill_in (:title), with: "Test link"
     fill_in (:url), with: "https://test-link.com"
+    fill_in (:tags), with: "School"
+
     click_button "Create link"
-    expect(current_path).to eq '/links'
-    within 'ul#links' do
-      expect(page).to have_content("Test link")
+    link = Link.first
+      expect(link.tags.map(&:name)).to include("School")
     end
-  end
 end
