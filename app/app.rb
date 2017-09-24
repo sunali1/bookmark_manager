@@ -1,7 +1,6 @@
 ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require_relative 'data_mapper_setup'
-# require_relative 'models/link'
 
 class BookmarkManager < Sinatra::Base
 
@@ -22,4 +21,14 @@ class BookmarkManager < Sinatra::Base
       link.save
       redirect to('/links')
     end
+
+    get '/tags/:name' do
+      tag = Tag.first(name: params[:name])
+      p tag
+      @links = tag ? tag.links : []
+      p @links
+      erb :'links/index'
+    end
 end
+# Models, Views, and Controller have to be all at the same level
+#the 'requires' have to be in the order the program follows; ie
